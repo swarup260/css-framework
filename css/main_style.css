@@ -1,7 +1,17 @@
 *{
 	box-sizing: border-box;
 	margin: 0;
+	font-family: Helvetica,Arial;
 }
+
+/* Site header */
+.site-header{
+	background-color:#C3B9B9;
+	color: #145BE8;
+	font-size:2em;
+	padding: 20px;
+}
+
 
 /* Top NavBar */
 .top-navbar ul {
@@ -52,6 +62,9 @@ p{
 }
 /* Mobile */
 @media only screen and (max-width: 760px) {
+	.site-header{
+		font-size: 1em;
+	}
 	.top-navbar li{
 		display: block;
 	}
@@ -100,4 +113,104 @@ p{
 }
 .Sideborder li:last-child {
 	border:none;
+}
+
+/* DropDown Meun*/
+
+.dropdown{
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content{
+	display: none;
+	position: absolute;
+	width: auto;
+	box-shadow: 2px 2px 0px 0px rgb(255,0,0);
+}
+.dropdown-content a{
+	display: block;
+	background-color:#C9C3C3;
+}
+
+.dropdown:hover .dropdown-content{
+	background-color: #696399;
+	font-size: 30px;
+	display: block;
+}
+
+
+/*Main Content */
+
+.container{
+	margin: 0 auto;
+	max-width: 90%;
+	background-color: #D5D5D5;
+}
+
+.row{
+	width: 100%;
+}
+[class *= "col-"]{
+	text-align: center;
+	border-right: 2px black solid;
+	background-color: #7F7E7E;
+	float: left;
+	width:25%;
+	height: 500px; 
+
+}
+
+[class *= "col-"]:even-child{
+	width: 25%;
+}
+[class *= "col-"]:odd-child{
+	width: 33.33%;
+}
+
+[class *= "col-"]:lastchild{
+	border:none;
+}
+.row:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.main{
+	width: 50%;
+}
+.side{
+	width: 25%;
+}
+@media only screen and (max-width: 760px) {
+	.container{
+		margin: 0;
+		max-width: 100%;
+	}
+	[class *= "col-"]{
+		border-bottom:2px black solid;
+		width: 100%;
+}
+
+
+}
+
+
+/*footer */
+
+.site-footer{
+	text-align:center;
+	margin: 5px 10px;
+	padding: 40px;
+	background-color:#615E5E;
+	bottom: 0;
+	height: 10%;
+}
+
+@media only screen and (max-width: 760px) {
+	.site-footer{
+		margin: 0px;
+		padding: 0px;
+}
 }
