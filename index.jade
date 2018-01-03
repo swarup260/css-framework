@@ -1,0 +1,24 @@
+doctype
+
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title CSS testing
+        link(rel="stylesheet", href="./css/style.css")
+        link(rel="shortcut icon", href="favicon.icon", type="image/png")
+    body
+        header
+            .title
+                h1 Website title
+            nav.topnav
+                ul
+                    li: a(href="#", title="title" claas="active") Home
+                    li: a(href="#", title="title") Services
+                    li.dropdown: a(href="#", title="title") Examples 
+                        .dropdown-content
+                            a(href="#", title="title") test1
+                            a(href="#", title="title") test1
+                    
+                    
