@@ -1,0 +1,277 @@
+@import 'mixins';
+
+header{
+    background: $Ared;
+}
+//Title
+    .title {
+        font-size: 50px;
+        font-family: $ff-basic;
+        background: $Ayellow;
+        @extend %l-padding;
+        @include Mobile{
+           font-size: 15px !important;
+        }
+        @include Tablets{
+           font-size: 30px;
+        }
+
+    }
+
+// Navbar
+.topnav{
+    background: $Ablue;
+    ul{
+        background: $Ablue;
+        width: 100%;
+        font-size: 25px;
+        list-style: none;
+        float: left;
+        @include Mobile {
+            font-size: 15px !important;
+        }
+
+        @include Tablets {
+            font-size: 20px;
+        }
+        li{
+            display: inline-block;
+            @include Mobile {
+                display: block;
+            }
+            a{
+                @extend %l-margin;
+                @include Atag($Ayellow,$Dyellow);
+            }
+        }
+    }
+}
+// DropDown Meun
+.dropdown{
+    display: inline-block;
+    position: relative;
+    .dropdown-content{
+        display: none;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        z-index: 1;
+        min-width: 160px;
+        @include Mobile {
+            min-width: 100px;
+        }
+
+        @include Tablets {
+            min-width: 100px;
+        }
+        background: $Ared;
+        a{
+            @include Atag($Ayellow, $Dyellow);
+            display: block;
+            border-bottom: 1px $black solid;
+            &:first-child,&:last-child{
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+//Floats
+
+.left{
+    float: left;
+}
+.right {
+    float:right;
+}
+
+.wrapper{
+    margin-top: 20px;
+    clear: both;
+}
+
+
+//Main Content Layout 2 section
+.row{
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5em;
+    justify-content: center;
+    align-items: center;
+    @include Mobile{
+        grid-template-columns: 1fr;
+    }
+    @include Tablets{
+        grid-template-columns: 1fr;
+    }
+
+}
+//Main Content Layout  3 section
+.row3 {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0.5em;
+    justify-content: center;
+    align-items: center;
+    @include Mobile {
+        grid-template-columns: 1fr;
+    }
+
+    @include Tablets {
+        grid-template-columns: 1fr;
+    }
+}
+//Main Content Layout  4 section
+.row4 {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 0.5em;
+    justify-content: center;
+    align-items: center;
+    @include Mobile {
+        grid-template-columns: 1fr;
+    }
+    @include Tablets {
+        grid-template-columns: 1fr;
+    }
+}
+
+//List 
+ul.list ,ol.list{
+    list-style-type:square;
+    @extend %l-margin;
+    li{
+       @extend %s-margin;
+    }
+}
+
+//List Card
+ul.card{
+    list-style: none;
+    @extend %l-margin;
+    border:1px solid $black;
+    border-radius: 5px; 
+    width: 50%;
+    color: $white;
+    li{
+     padding: 5px 10px;
+     background:lighten($color: $black, $amount: 50%);
+     border-bottom:1px solid $black;
+     &:last-child{
+         border: none;
+     }
+     &:first-child{
+       background:lighten($color: $black, $amount: 30%);
+     }
+     &:not(:first-child):hover{
+         background:$Ared;
+     }
+    }
+
+}
+
+form.formstyle{
+    @extend %l-margin;
+    background: $Aorange;
+    overflow: hidden;
+    border: 1px solid $black;
+    border-radius: 5px;
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],{
+        width: 200px;
+        @extend %s-margin;
+        padding: 5px 10px;
+        border: 1px solid $black;
+        border-radius: 5px; 
+        &:focus{
+            border: 2px solid $Ablue;
+        }
+    }
+
+    input[type="submit"],
+    input[type="reset"]{
+        display: inline-block;
+        @extend %s-margin;
+        text-align: center;
+        padding: 5px 10px;
+        border: 1px solid $black;
+        border-radius: 5px;
+        color: $white;
+        background-color: $Ared;
+        transition: background-color 0.5s ease-in-out;
+        &:hover,&:focus{
+           background: $Ablue;
+        }
+    }
+
+}
+//Button
+button{
+    text-align: center;
+    @extend %s-margin;
+    padding: 10px 15px;
+    color: $white;
+    background-color:$Dorange;
+    transition: background-color 0.5s ease-in-out;
+    border: 1px solid $black;
+    border-radius: 5px;
+    &:hover{
+        background-color:$Aorange;
+    }
+    &.primary{
+        color: $black;
+        background-color:$Dyellow;
+        transition: background-color 0.5s ease-in-out;
+        &:hover{
+            background-color:$Ayellow;
+        }
+    }
+    &.secondary {
+        background-color: $Dblue;
+        transition: background-color 0.5s ease-in-out;
+        &:hover {
+            background-color: $Bblue;
+        }
+    }
+    &.warning {
+        background-color: $Dred;
+        transition: background-color 0.5s ease-in-out;
+        &:hover {
+            background-color: $Ared;
+        }
+    }
+}
+
+//table
+table{
+    text-align: center;
+    border: 1px solid $black;
+    background-color:$Ared;
+    td{
+        border:2px solid $black;
+    }
+    th{
+        font-size: 25px;
+        padding: 5px 10px;
+        background-color:$Aorange;
+    }
+    tbody{
+        font-size: 20px;
+    }
+
+
+}
+
+//footer
+footer{
+    background: $Ayellow;
+    font-size: 30px;
+    overflow: hidden;
+}

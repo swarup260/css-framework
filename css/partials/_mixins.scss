@@ -1,0 +1,44 @@
+/* a href tag*/
+
+@mixin Atag($color1, $color2) {
+    color: $color1;
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    &:hover{
+        color: $color2;
+    }
+}
+
+@mixin Flex-align-col($align) {
+
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    flex-direction: column;
+    justify-content: $align;
+    align-items: $align;
+}
+
+
+/* Mobile */
+
+@mixin Mobile {
+    @media only screen and (max-width: 460px) {
+        @content;
+    }
+}
+
+/* tablets */
+
+@mixin Tablets {
+    @media only screen and (max-width: 800px) {
+        @content;
+    }
+}
